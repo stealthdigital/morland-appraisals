@@ -7,12 +7,17 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description: string;
+  /** Cloudinary URL used for social previews; the transform is rewritten to 1200x630. */
+  image?: string;
 }
 
-const { title, description } = Astro.props;
+const BASE = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
+const DEFAULT_IMAGE = `${BASE}v1788982278/lakefront-cottage-deck-alt_llkcny.jpg`;
+
+const { title, description, image = DEFAULT_IMAGE } = Astro.props;
 const canonical = new URL(routeOf(Astro.url), Astro.site).href;
-const FAVICON =
-  'https://res.cloudinary.com/dj76bnpni/image/upload/f_auto,q_auto,w_64/v1788982278/morland-appraisals-icon_nnzy1j.png';
+const ogImage = image.replace(/\/upload\/(?:[^/]*\/)?(?=v\d+\/)/, '/upload/f_jpg,q_auto,w_1200,h_630,c_fill,g_auto/');
+const icon = (w: number) => `${BASE}f_png,q_auto,w_${w},h_${w},c_fit/v1788982278/morland-appraisals-icon_nnzy1j.png`;
 ---
 
 <!DOCTYPE html>
@@ -23,7 +28,22 @@ const FAVICON =
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
-  <link rel="icon" href={FAVICON} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Morland Real Estate Appraisals" />
+  <meta property="og:locale" content="en_CA" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+  <link rel="icon" href={icon(32)} sizes="32x32" type="image/png" />
+  <link rel="icon" href={icon(192)} sizes="192x192" type="image/png" />
+  <link rel="apple-touch-icon" href={icon(180)} sizes="180x180" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
