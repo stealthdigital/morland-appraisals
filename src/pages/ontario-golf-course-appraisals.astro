@@ -1,10 +1,20 @@
 ---
 import ServicePage from '../layouts/ServicePage.astro';
+import { service } from '../lib/schema';
+
+const schema = service({
+  route: '/ontario-golf-course-appraisals',
+  name: 'Ontario Golf Course Appraisals',
+  serviceType: 'Golf course valuation',
+  description:
+    'Expert golf course appraisals across Ontario, combining a passion for golf with precision in valuation.',
+});
 
 const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
 ---
 
 <ServicePage
+  schema={schema}
   title="Ontario Golf Course Appraisals | Morland Real Estate Appraisals"
   description="Expert golf course appraisals across Ontario from Morland Real Estate Appraisals, where a passion for golf and precision in valuation come together."
   heroImage={`${base}f_auto,q_auto,c_limit,w_1920/v1789074763/Golf-Course-Appraisals-1024x369_miituf.jpg`}
@@ -28,5 +38,6 @@ const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
     <li><strong>Trusted Industry Professionals:</strong> Widely recognized and trusted within the industry, our appraisals are relied upon by investors, financial institutions, and property owners alike.</li>
     <li><strong>Partnering for Your Success:</strong> Understanding that the valuation of your golf course is crucial for your business decisions, we at Morland Appraisals are committed to delivering detailed and impartial appraisals to support your endeavors.</li>
   </ul>
+  <p>Golf courses are one of many property types covered by our <a href="/commercial-appraisals">commercial appraisal services</a>. We also appraise <a href="/hunting-fishing-lodge-appraisals">hunting and fishing lodges</a> and work throughout our <a href="/service-area">Northeastern Ontario service area</a>.</p>
   <p class="phone-line">Ready to discuss the appraisal of your golf course? Contact Morland Real Estate Appraisals at <a href="tel:+17054743500">(705) 474-3500</a>.</p>
 </ServicePage>

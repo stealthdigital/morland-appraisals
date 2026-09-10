@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import ContactForm from '../components/ContactForm.astro';
+import { contactPage } from '../lib/schema';
 
 const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
 ---
@@ -11,6 +12,8 @@ const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
   description="Contact Morland Real Estate Appraisals in North Bay to request a residential or commercial appraisal."
   image={`${base}v1788982278/lakefront-dock-patio-banner_clq6tq.png`}
 >
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(contactPage)} />
+
   <PageHero
     image={`${base}f_auto,q_auto,w_1920/v1788982278/lakefront-dock-patio-banner_clq6tq.png`}
     alt="Lakefront dock and patio"
@@ -21,6 +24,7 @@ const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
   <section class="section">
     <div class="container copy-form">
       <div class="contact-details">
+        <h2 class="sr-only">Our contact details</h2>
         <div>
           <span class="eyebrow">Call us</span>
           <a class="big-phone" href="tel:+17054743500">(705) 474-3500</a>

@@ -1,5 +1,14 @@
 ---
 import ServicePage from '../layouts/ServicePage.astro';
+import { service } from '../lib/schema';
+
+const schema = service({
+  route: '/commercial-appraisals',
+  name: 'Commercial Property Appraisals',
+  serviceType: 'Commercial real estate appraisal',
+  description:
+    'Commercial property appraisals in North Bay and area, trusted by investors, banks, credit unions, lawyers and accountants.',
+});
 
 const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
 
@@ -28,6 +37,7 @@ const propertyTypes: { label: string; href?: string }[] = [
 ---
 
 <ServicePage
+  schema={schema}
   title="Commercial Appraisals | Morland Real Estate Appraisals"
   description="Commercial property appraisals in North Bay and area. Trusted by investors, banks, credit unions, lawyers and accountants for accurate, detailed valuations."
   heroImage={`${base}f_auto,q_auto,w_1920/v1788982280/commercial-property-appraisal-north-bay_u0mexx.jpg`}
@@ -43,6 +53,7 @@ const propertyTypes: { label: string; href?: string }[] = [
   <p>In North Bay, the commercial property market can be complex and difficult to price. For this reason, you need an appraiser with a deep understanding of our market. Morland Real Estate Appraisals is well-known as the area's leader, trusted by investors, banks, credit unions, lawyers and accountants for accurate commercial valuations. We pride ourselves on detail-oriented appraisals for all types of commercial properties.</p>
   <p>While creating a commercial real estate appraisal, we will visit the location and perform an in depth appraisal using the appropriate value approach method required (cost, income, or direct sales, subdivision, discounted cash flow, etc). We will then create and deliver a high quality, detailed appraisal report.</p>
   <p>As your partner, you can trust us to produce impartial appraisals that are based on our unique understanding of commercial real estate legislation, current local trends, and a thorough analysis of the specific property, whether it's a retail shop, multi-unit housing complex, warehouse, or any other commercial structure.</p>
+  <p>We appraise commercial property across our <a href="/service-area">Northeastern Ontario service area</a>, with dedicated pages for <a href="/sudbury-property-appraisals">Sudbury</a> and <a href="/warren-property-appraisals">Warren</a>. For homes, condos and apartments, see our <a href="/residential-appraisals">residential appraisal services</a>.</p>
   <p class="phone-line">We want to help your business succeed. Call us at <a href="tel:+17054743500">(705) 474-3500</a> to discuss your upcoming commercial appraisal.</p>
 
   <h2>We Appraise Commercial Properties</h2>

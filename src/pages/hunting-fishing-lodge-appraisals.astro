@@ -1,10 +1,20 @@
 ---
 import ServicePage from '../layouts/ServicePage.astro';
+import { service } from '../lib/schema';
+
+const schema = service({
+  route: '/hunting-fishing-lodge-appraisals',
+  name: 'Hunting and Fishing Lodge Appraisals',
+  serviceType: 'Hunting and fishing lodge valuation',
+  description:
+    'Northern Ontario hunting and fishing lodge appraisals, using diverse methods to deliver precise, reliable property evaluations.',
+});
 
 const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
 ---
 
 <ServicePage
+  schema={schema}
   title="Hunting & Fishing Lodge Appraisals | Morland Real Estate Appraisals"
   description="Northern Ontario hunting and fishing lodge appraisals. Our experienced team uses diverse methods to deliver precise, reliable property evaluations."
   heroImage={`${base}f_auto,q_auto,w_1920/v1788982279/hunting-fishing-lodge-appraisal-northern-ontario-banner_redsft.jpg`}
@@ -28,5 +38,6 @@ const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
     <li><strong>Trusted by Industry Leaders:</strong> Recognized and relied upon by investors, banks, and legal professionals, Morland Appraisals stands for accuracy and credibility.</li>
     <li><strong>Partnering for Your Success:</strong> Understanding that the valuation of your hunting or fishing lodge is crucial for your business decisions, we at Morland Appraisals are committed to delivering detailed and impartial appraisals to support your endeavors.</li>
   </ul>
+  <p>Lodges are one of many property types covered by our <a href="/commercial-appraisals">commercial appraisal services</a>. We also appraise <a href="/ontario-golf-course-appraisals">golf courses</a> across Ontario and work throughout our <a href="/service-area">Northeastern Ontario service area</a>.</p>
   <p class="phone-line">Ready to discuss the appraisal of your fishing lodge? Contact Morland Real Estate Appraisals at <a href="tel:+17054743500">(705) 474-3500</a>.</p>
 </ServicePage>

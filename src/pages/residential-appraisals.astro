@@ -1,10 +1,20 @@
 ---
 import ServicePage from '../layouts/ServicePage.astro';
+import { service } from '../lib/schema';
 
 const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
+
+const schema = service({
+  route: '/residential-appraisals',
+  name: 'Residential Property Appraisals',
+  serviceType: 'Residential real estate appraisal',
+  description:
+    'Residential property appraisals in North Bay for purchasing, refinancing, estates, matrimonial separations and more.',
+});
 ---
 
 <ServicePage
+  schema={schema}
   title="Residential Appraisals | Morland Real Estate Appraisals"
   description="Residential property appraisals in North Bay for purchasing, refinancing, estates, matrimonial separations and more."
   heroImage={`${base}f_auto,q_auto,w_1920/v1788982280/residential-property-appraisal-north-bay_r1jgej.jpg`}
@@ -16,8 +26,11 @@ const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
   bandImage={`${base}f_auto,q_auto,w_1920/v1788982282/waterfront-home-lake-view_cy7kdl.jpg`}
   bandAlt="Waterfront home interior with a view of the lake"
 >
+  <h2>Value Your Home</h2>
   <p>From purchasing and mortgage financing to capital gains declaration, legal issues or debt solutions, there are many reasons why you might want an appraisal. No matter the reason, Morland Real Estate Appraisals has the residential appraisal service you need, including single family homes, townhouses, condos, apartments, and other residential buildings.</p>
   <p>After years of appraising real estate in the North Bay area, we understand both the local market, and how to evaluate the many different types of properties. During an appraisal, we take into account the age of the home, current condition, building materials, location, market trends, and many other factors.</p>
+  <h2>When You Might Need a Residential Appraisal</h2>
   <p>In addition to standard buying and selling appraisals, we also perform valuations for estate settlements, insurance, relocation, matrimonial separations, lease arbitration, and many other situations. Our accurate and precise appraisals will help you determine the true worth of a property for your exact needs.</p>
+  <p>If you own income property or a commercial building, see our <a href="/commercial-appraisals">commercial appraisal services</a>. We appraise throughout our <a href="/service-area">Northeastern Ontario service area</a>, including <a href="/sudbury-property-appraisals">Sudbury</a> and <a href="/warren-property-appraisals">Warren</a>.</p>
   <p class="phone-line">To discuss your residential appraisal needs and specific services, reach out to us at <a href="tel:+17054743500">(705) 474-3500</a> for more information.</p>
 </ServicePage>

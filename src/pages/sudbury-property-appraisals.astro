@@ -1,10 +1,21 @@
 ---
 import ServicePage from '../layouts/ServicePage.astro';
+import { service } from '../lib/schema';
+
+const schema = service({
+  route: '/sudbury-property-appraisals',
+  name: 'Property Appraisals in Sudbury, Ontario',
+  serviceType: 'Commercial real estate appraisal',
+  description:
+    'Commercial property appraisals in Sudbury, Ontario. Precise, data-driven valuations tuned to the market dynamics of Sudbury and its surrounding areas.',
+  city: 'Sudbury',
+});
 
 const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
 ---
 
 <ServicePage
+  schema={schema}
   title="Sudbury Appraisals | Morland Real Estate Appraisals"
   description="Commercial property appraisals in Sudbury, Ontario. Precise, data-driven valuations tuned to the market dynamics of Sudbury and its surrounding areas."
   heroImage={`${base}f_auto,q_auto,w_1920/v1788982282/sudbury-property-appraisals-downtown_gv1jju.jpg`}
@@ -22,6 +33,7 @@ const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
     <li><strong>Investment Analysis:</strong> In-depth market research and analysis to empower informed investment decisions.</li>
     <li><strong>Financial &amp; Litigation Support:</strong> Expert appraisal reports that meet the stringent standards required for financing, litigation, and regulatory compliance.</li>
   </ul>
+  <p>Sudbury sits inside our wider <a href="/service-area">Northeastern Ontario service area</a>. See our <a href="/commercial-appraisals">commercial appraisal services</a> for the full range of property types we cover, or our <a href="/residential-appraisals">residential appraisals</a> for homes and condos.</p>
   <p class="phone-line">Ready to discuss your Sudbury appraisal? Contact Morland Real Estate Appraisals at <a href="tel:+17054743500">(705) 474-3500</a>.</p>
 
   <h2>Why Choose Morland Appraisals?</h2>

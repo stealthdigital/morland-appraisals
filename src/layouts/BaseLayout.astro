@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { routeOf } from '../lib/site';
+import { business } from '../lib/schema';
 import '../styles/global.css';
 
 interface Props {
@@ -54,6 +55,7 @@ const icon = (w: number) => `${BASE}f_png,q_auto,w_${w},h_${w},c_fit/v1788982278
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(business)} />
   <slot name="head" />
 </head>
 <body>

@@ -1,5 +1,15 @@
 ---
 import ServicePage from '../layouts/ServicePage.astro';
+import { service } from '../lib/schema';
+
+const schema = service({
+  route: '/warren-property-appraisals',
+  name: 'Property Appraisals in Warren, Ontario',
+  serviceType: 'Commercial real estate appraisal',
+  description:
+    'Property appraisals in Warren, Ontario, delivering expert valuations for informed real estate decisions.',
+  city: 'Warren',
+});
 
 const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
 /* TODO: no Warren-specific image in the Cloudinary handoff (the old site used
@@ -7,6 +17,7 @@ const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
 ---
 
 <ServicePage
+  schema={schema}
   title="Warren Appraisals | Morland Real Estate Appraisals"
   description="Warren property appraisals by Morland Appraisals delivers expert property valuations in Warren, Ontario for informed real estate decisions."
   heroImage={`${base}f_auto,q_auto,w_1920/v1788982281/service-area-map-banner_rncejg.png`}
@@ -34,5 +45,6 @@ const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
     <li><strong>Trusted by Industry Leaders:</strong> Investors, financial institutions, and legal professionals rely on Morland Appraisals for accuracy and credibility. Our commitment to excellence has earned us the trust of industry leaders throughout the region.</li>
     <li><strong>Partnering for Your Success:</strong> Understanding that a precise valuation is crucial for your business decisions, Morland Appraisals is dedicated to delivering detailed and impartial appraisals. Our goal is to support your endeavors with reliable, actionable insights.</li>
   </ul>
+  <p>Warren sits inside our wider <a href="/service-area">Northeastern Ontario service area</a>. See our <a href="/commercial-appraisals">commercial appraisal services</a> for the full range of property types we cover, our <a href="/residential-appraisals">residential appraisals</a> for homes and condos, or our nearby <a href="/sudbury-property-appraisals">Sudbury appraisals</a>.</p>
   <p class="phone-line">Ready to discuss the appraisal of your Warren property? Contact Morland Real Estate Appraisals at <a href="tel:+17054743500">(705) 474-3500</a>.</p>
 </ServicePage>

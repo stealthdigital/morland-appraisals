@@ -1,5 +1,14 @@
 ---
 import ServicePage from '../layouts/ServicePage.astro';
+import { service } from '../lib/schema';
+
+const schema = service({
+  route: '/service-area',
+  name: 'Property Appraisals across Northeastern Ontario',
+  serviceType: 'Real estate appraisal',
+  description:
+    'Full-service property appraisals for North Bay, Ontario and area, from Sundridge to Mattawa and the Tri-Towns to Warren, Sudbury, Restoule and Loring.',
+});
 
 const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
 const MAP = 'v1789074272/Morland_Appraisals_Service_Area_nryvvi.jpg';
@@ -7,6 +16,7 @@ const mapSrc = (w: number) => `${base}f_auto,q_auto,w_${w}/${MAP}`;
 ---
 
 <ServicePage
+  schema={schema}
   title="Service Area | Morland Real Estate Appraisals"
   description="Full-service property appraisals for North Bay, Ontario and area, from Sundridge to Mattawa and the Tri-Towns to Warren, Sudbury, Restoule and Loring."
   heroImage={`${base}f_auto,q_auto,w_1920/v1788982281/service-area-map-banner_rncejg.png`}
@@ -18,6 +28,7 @@ const mapSrc = (w: number) => `${base}f_auto,q_auto,w_${w}/${MAP}`;
 >
   <h2>We Serve The Following Areas:</h2>
   <p>Morland Real Estate Appraisals is proud to provide full-service appraisal services to North Bay, Ontario and surrounding areas, including Sundridge to Mattawa, Tri-Towns to <a href="/warren-property-appraisals">Warren</a>, <a href="/sudbury-property-appraisals">Sudbury</a>, Restoule and Loring.</p>
+  <p>Within that area we handle both <a href="/residential-appraisals">residential appraisals</a> and <a href="/commercial-appraisals">commercial appraisals</a>, along with <a href="/hunting-fishing-lodge-appraisals">hunting and fishing lodges</a> and <a href="/ontario-golf-course-appraisals">golf courses</a>.</p>
   <p class="phone-line">To find out whether we cover your property, reach out to us at <a href="tel:+17054743500">(705) 474-3500</a> for more information.</p>
 
   <section slot="after" class="section section--neutral">

@@ -16,6 +16,8 @@ interface Props {
   /** Omit to render the page without the full-width photo band (service area). */
   bandImage?: string;
   bandAlt?: string;
+  /** JSON-LD node for this page, usually a `Service` built by `lib/schema`. */
+  schema?: unknown;
 }
 
 const {
@@ -29,10 +31,12 @@ const {
   formIntro,
   bandImage,
   bandAlt,
+  schema,
 } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} image={heroImage}>
+  {schema && <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />}
   <PageHero image={heroImage} alt={heroAlt} title={heroTitle} lede={heroLede} />
 
   <section class="section">
