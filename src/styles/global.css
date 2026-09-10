@@ -85,6 +85,8 @@ address { font-style: normal; }
 .rule { width: 48px; height: 3px; margin-bottom: var(--space-5); background: var(--color-accent); }
 .lede { font-size: var(--text-lg); color: var(--color-ink-muted); }
 .phone-line { font-size: var(--text-lg); font-weight: var(--weight-semibold); }
+.copy a, .lede a, .thanks a, .contact-details .detail a, .member .numbers a, .testimonial a { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; text-decoration-color: var(--color-accent); }
+.copy a:hover, .lede a:hover, .thanks a:hover, .contact-details .detail a:hover { text-decoration-color: currentColor; }
 
 /* Buttons --------------------------------------------------------------- */
 .btn {

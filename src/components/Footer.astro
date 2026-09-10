@@ -1,8 +1,8 @@
 ---
 const LOGO =
   'https://res.cloudinary.com/dj76bnpni/image/upload/c_crop,w_378,h_72,x_4,y_4/f_auto,q_auto,w_756/v1788982277/morland-appraisals-logo-dark_phj6wc.jpg';
-const AIC =
-  'https://res.cloudinary.com/dj76bnpni/image/upload/f_auto,q_auto,w_800/v1788982278/appraisal-institute-of-canada-logo_phh8tr.png';
+const aic = (w: number) =>
+  `https://res.cloudinary.com/dj76bnpni/image/upload/f_auto,q_auto,w_${w}/v1788982278/appraisal-institute-of-canada-logo_phh8tr.png`;
 ---
 
 <footer class="site-footer">
@@ -38,7 +38,7 @@ const AIC =
     </div>
   </div>
   <div class="container footer-aic">
-    <div class="aic-card"><img src={AIC} alt="Appraisal Institute of Canada" width="3213" height="558" /></div>
+    <div class="aic-card"><img src={aic(440)} srcset={`${aic(220)} 220w, ${aic(440)} 440w`} sizes="220px" alt="Appraisal Institute of Canada" width="3213" height="558" loading="lazy" /></div>
     <p>Approved and licensed by the Appraisal Institute of Canada.</p>
   </div>
   <div class="footer-legal">
