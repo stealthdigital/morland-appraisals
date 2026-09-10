@@ -8,22 +8,15 @@ interface Props {
 
 const { heading, intro } = Astro.props;
 
-/* One Netlify form collects every page's submissions; `page` records which one. */
-const FORM_NAME = 'appraisal-request';
+/* Posts to the Vercel function in api/contact.ts; `page` records which page sent it. */
 const page = routeOf(Astro.url);
 ---
 
 <div class="form-card" id="request">
   <h3>{heading}</h3>
   <p>{intro}</p>
-  <form
-    class="form-grid"
-    name={FORM_NAME}
-    method="POST"
-    data-netlify="true"
-    data-netlify-honeypot="bot-field"
-  >
-    <input type="hidden" name="form-name" value={FORM_NAME} />
+  <p class="form-error" id="form-error" role="alert">Sorry, your request could not be sent. Please check your details and try again, or call us at <a href="tel:+17054743500">(705) 474-3500</a>.</p>
+  <form class="form-grid" method="POST" action="/api/contact">
     <input type="hidden" name="page" value={page} />
     <p hidden><label>Do not fill this out if you are human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
     <div class="field"><label for="first">First name</label><input id="first" name="first_name" type="text" autocomplete="given-name" required /></div>

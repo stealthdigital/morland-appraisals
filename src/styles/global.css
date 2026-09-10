@@ -197,6 +197,11 @@ address { font-style: normal; }
 .field input:focus, .field textarea:focus { border-color: var(--color-primary); outline: 2px solid var(--color-primary-tint); outline-offset: 0; }
 .field textarea { min-height: 128px; resize: vertical; }
 .form-card .btn { width: 100%; margin-top: var(--space-2); }
+.form-error { display: none; margin-bottom: var(--space-4); padding: var(--space-3) var(--space-4); border-left: 3px solid var(--color-primary); background: var(--color-white); color: var(--color-ink); }
+.form-error:target { display: block; }
+.thanks { max-width: 62ch; }
+.thanks h1 { margin-bottom: var(--space-4); }
+.thanks .lede { margin-bottom: var(--space-6); }
 
 /* Photo band ------------------------------------------------------------- */
 .photo-band { height: 480px; }
