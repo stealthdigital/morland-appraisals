@@ -17,6 +17,8 @@ const DEFAULT_IMAGE = `${BASE}v1788982278/lakefront-cottage-deck-alt_llkcny.jpg`
 const { title, description, image = DEFAULT_IMAGE } = Astro.props;
 const canonical = new URL(routeOf(Astro.url), Astro.site).href;
 const ogImage = image.replace(/\/upload\/(?:[^/]*\/)?(?=v\d+\/)/, '/upload/f_jpg,q_auto,w_1200,h_630,c_fill,g_auto/');
+/** Google Tag Manager container carried over from the old WordPress site. */
+const GTM_ID = 'GTM-WZVDN8LM';
 const icon = (w: number) => `${BASE}f_png,q_auto,w_${w},h_${w},c_fit/v1788982278/morland-appraisals-icon_nnzy1j.png`;
 ---
 
@@ -25,6 +27,9 @@ const icon = (w: number) => `${BASE}f_png,q_auto,w_${w},h_${w},c_fit/v1788982278
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script is:inline define:vars={{ GTM_ID }}>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',GTM_ID);
+  </script>
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
@@ -50,6 +55,7 @@ const icon = (w: number) => `${BASE}f_png,q_auto,w_${w},h_${w},c_fit/v1788982278
   <slot name="head" />
 </head>
 <body>
+  <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`} height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <Header />
   <main>
     <slot />
