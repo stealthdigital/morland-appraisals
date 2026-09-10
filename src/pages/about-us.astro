@@ -14,6 +14,7 @@ const team = [
     title: 'President',
     bio: 'Brad is a candidate appraiser with over 20 years of service in the residential and commercial field. He has extensive experience in the area of valuation and analysis of all common property types, and commercial properties. Brad is owner and manager of Morland Real Estate Appraisal Inc.',
     cell: { label: '705-840-9966', href: 'tel:+17058409966' },
+    fax: '705-495-4423',
   },
   {
     image: headshot('v1788982286', 'gord-morland-morland-appraisals_j5prye.jpg'),
@@ -41,7 +42,7 @@ const team = [
     name: 'Joey Boulet',
     title: 'P. App, AACI',
     bio: null,
-    cell: null,
+    cell: { label: '705-477-5303', href: 'tel:+17054775303' },
   },
 ];
 ---
@@ -77,7 +78,7 @@ const team = [
     </div>
   </section>
 
-  <section class="section section--neutral">
+  <section class="section section--neutral" id="team">
     <div class="container">
       <div class="section-heading">
         <h2>Meet Our Team!</h2>
@@ -91,6 +92,7 @@ const team = [
             <div class="numbers">
               {member.cell && <span>Cell: <a href={member.cell.href}>{member.cell.label}</a></span>}
               <span>Office: <a href="tel:+17054743500">705-474-3500</a></span>
+              {'fax' in member && <span>Fax: {member.fax}</span>}
             </div>
           </li>
         ))}

@@ -1,0 +1,35 @@
+---
+import ServicePage from '../layouts/ServicePage.astro';
+
+const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
+/* TODO: no golf course image in the Cloudinary handoff. The old site used
+   /wp-content/uploads/2024/04/Golf-Course-Appraisals.jpeg; upload it to
+   Cloudinary and swap the hero below. Commercial banner used as a stand-in. */
+---
+
+<ServicePage
+  title="Ontario Golf Course Appraisals | Morland Real Estate Appraisals"
+  description="Expert golf course appraisals in Ontario from Morland Real Estate Appraisals, where our passion for golf and precision in valuation converge to enhance your property's potential."
+  heroImage={`${base}f_auto,q_auto,w_1920/v1788982280/commercial-property-appraisal-banner_oohxex.png`}
+  heroAlt="Golf course in Ontario"
+  heroTitle="Golf Course Appraisals"
+  heroLede="Explore expert Golf Course Appraisals from Morland Real Estate Appraisals, where our passion for golf and precision in valuation converge to enhance your property's potential in Ontario."
+  formHeading="Request a golf course appraisal"
+  formIntro="Fill out the form to be contacted by one of our golf course appraisal specialists to see how we can help you!"
+>
+  <h2>Value Your Golf Course</h2>
+  <p>Welcome to Morland Real Estate Appraisals, your trusted source for Golf Course Appraisals in Ontario. Our skilled team leverages a variety of professional appraisal techniques, including market analysis and income capitalization, to provide you with accurate and comprehensive valuations. Whether you're considering buying, selling, or managing a golf course, rely on Morland Appraisals to deliver detailed insights and expert evaluations tailored to the specifics of the golf industry.</p>
+  <p class="phone-line">We want to help your business succeed. Call us at <a href="tel:+17054743508">(705) 474-3508</a> to discuss your upcoming golf course appraisal.</p>
+
+  <h2>Why Choose Us for Your Golf Course Appraisal?</h2>
+  <ul>
+    <li><strong>Expertise in Golf Course Valuation:</strong> Our team has extensive experience in appraising golf courses, ensuring accurate and comprehensive evaluations.</li>
+    <li><strong>Passionate Avid Golfers:</strong> As avid golfers ourselves, we understand the nuances and unique aspects of golf courses, which greatly enhances our appraisal accuracy and insight.</li>
+    <li><strong>Tailored Appraisal Methods:</strong> We use a blend of market analysis, income capitalization, and other relevant appraisal techniques tailored specifically to the golf industry.</li>
+    <li><strong>Detailed Market Insights:</strong> We stay updated with the latest trends and market dynamics, providing you with current and relevant appraisal values.</li>
+    <li><strong>Commitment to Quality:</strong> We are committed to delivering high-quality, detailed appraisals that meet your specific needs and help you make informed decisions.</li>
+    <li><strong>Trusted Industry Professionals:</strong> Widely recognized and trusted within the industry, our appraisals are relied upon by investors, financial institutions, and property owners alike.</li>
+    <li><strong>Partnering for Your Success:</strong> Understanding that the valuation of your golf course is crucial for your business decisions, we at Morland Appraisals are committed to delivering detailed and impartial appraisals to support your endeavors.</li>
+  </ul>
+  <p class="phone-line">Ready to discuss the appraisal of your golf course? Contact Morland Real Estate Appraisals at <a href="tel:+17054743508">(705) 474-3508</a>.</p>
+</ServicePage>

@@ -1,0 +1,9 @@
+# Old WordPress URLs -> new routes
+/home-page                          /                                   301
+/home-page/                         /                                   301
+/service-area/sudbury-appraisals    /sudbury-property-appraisals        301
+/service-area/sudbury-appraisals/   /sudbury-property-appraisals        301
+/service-area/warren-appraisals     /warren-property-appraisals         301
+/service-area/warren-appraisals/    /warren-property-appraisals         301
+/sample-page                        /                                   301
+/sample-page/                       /                                   301
