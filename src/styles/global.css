@@ -107,7 +107,8 @@ address { font-style: normal; }
 
 /* Header ---------------------------------------------------------------- */
 .site-header { position: sticky; top: 0; z-index: 50; background: var(--color-black); color: var(--color-white); border-bottom: 1px solid rgba(255,255,255,0.08); }
-.header-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); min-height: var(--header-h); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); min-height: var(--header-h); width: min(1360px, 100% - 2 * var(--gutter)); }
+.nav-list a, .nav-actions .phone, .nav-actions .btn { white-space: nowrap; }
 .brand img { height: 48px; width: auto; }
 .site-nav { display: flex; align-items: center; gap: var(--space-6); }
 .nav-list { display: flex; align-items: center; gap: var(--space-5); }
@@ -249,6 +250,16 @@ address { font-style: normal; }
   .reasons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .team { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 1320px) {
+  .site-nav { gap: var(--space-5); }
+  .nav-list { gap: var(--space-4); }
+  .nav-actions { gap: var(--space-4); }
+  .nav-actions .btn { padding-inline: var(--space-4); }
+}
+@media (max-width: 1220px) and (min-width: 1121px) {
+  .brand img { height: 40px; }
+  .nav-actions .phone { display: none; }
 }
 @media (max-width: 1120px) {
   :root { --header-h: 72px; }
