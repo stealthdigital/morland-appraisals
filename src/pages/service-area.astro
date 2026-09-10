@@ -2,6 +2,8 @@
 import ServicePage from '../layouts/ServicePage.astro';
 
 const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
+const MAP = 'v1789074272/Morland_Appraisals_Service_Area_nryvvi.jpg';
+const mapSrc = (w: number) => `${base}f_auto,q_auto,w_${w}/${MAP}`;
 ---
 
 <ServicePage
@@ -17,4 +19,24 @@ const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
   <h2>We Serve The Following Areas:</h2>
   <p>Morland Real Estate Appraisals is proud to provide full-service appraisal services to North Bay, Ontario and surrounding areas, including Sundridge to Mattawa, Tri-Towns to <a href="/warren-property-appraisals">Warren</a>, <a href="/sudbury-property-appraisals">Sudbury</a>, Restoule and Loring.</p>
   <p class="phone-line">To find out whether we cover your property, reach out to us at <a href="tel:+17054743500">(705) 474-3500</a> for more information.</p>
+
+  <section slot="after" class="section section--neutral">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Our Service Area</h2>
+      </div>
+      <figure class="map-figure">
+        <img
+          src={mapSrc(1200)}
+          srcset={`${mapSrc(800)} 800w, ${mapSrc(1200)} 1200w, ${mapSrc(1600)} 1600w, ${mapSrc(2180)} 2180w`}
+          sizes="(max-width: 1168px) calc(100vw - 48px), 1120px"
+          alt="Map of Northeastern Ontario with the Morland Real Estate Appraisals service area shaded, reaching from Sudbury and Sundridge in the south to Temiskaming Shores in the north and Mattawa in the east"
+          width="2180"
+          height="1634"
+          loading="lazy"
+        />
+        <figcaption>Serving North Bay, Ontario and surrounding areas, from Sundridge to Mattawa and the Tri-Towns to Warren and Sudbury.</figcaption>
+      </figure>
+    </div>
+  </section>
 </ServicePage>

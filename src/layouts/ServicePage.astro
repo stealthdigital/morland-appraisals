@@ -47,4 +47,5 @@ const {
   </section>
 
   {bandImage && <PhotoBand image={bandImage} alt={bandAlt ?? ''} />}
+  <slot name="after" />
 </BaseLayout>
