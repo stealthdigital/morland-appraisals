@@ -10,6 +10,7 @@ export default defineConfig({
   trailingSlash: 'never',
   integrations: [
     sitemap({
+      filter: (page) => !page.includes('/thank-you'),
       serialize: (item) => ({ ...item, url: item.url.replace(/(?<!\/)\/$/, '') }),
     }),
   ],

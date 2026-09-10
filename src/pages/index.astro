@@ -11,6 +11,7 @@ import Pricing from '../components/icons/Pricing.astro';
 import Complex from '../components/icons/Complex.astro';
 
 const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
+const hero = (w: number) => `${base}f_auto,q_auto,w_${w}/v1788982278/lakefront-cottage-deck-alt_llkcny.jpg`;
 
 const services = [
   'Refinancing Appraisals',
@@ -51,7 +52,7 @@ const localBusiness = {
 ---
 
 <BaseLayout
-  title="Morland Real Estate Appraisals | North Bay Residential & Commercial Appraisals"
+  title="Morland Real Estate Appraisals | North Bay Property Appraisers"
   description="Trust Morland Real Estate Appraisals for accurate, fast, and reliable residential and commercial property valuations in North Bay."
 >
   <script
@@ -64,7 +65,9 @@ const localBusiness = {
   <section class="hero">
     <img
       class="hero-bg"
-      src={`${base}f_auto,q_auto,w_1920/v1788982278/lakefront-cottage-deck-alt_llkcny.jpg`}
+      src={hero(1920)}
+      srcset={`${hero(768)} 768w, ${hero(1280)} 1280w, ${hero(1920)} 1920w`}
+      sizes="100vw"
       alt="Lakefront cottage deck in the North Bay area"
       fetchpriority="high"
     />
@@ -96,7 +99,9 @@ const localBusiness = {
     <div class="container about-grid">
       <div class="photo">
         <img
-          src={`${base}f_auto,q_auto,w_1080/v1788982280/downtown-north-bay-main-street_pw20b3.png`}
+          src={`${base}f_auto,q_auto,w_540/v1788982280/downtown-north-bay-main-street_pw20b3.png`}
+          srcset={`${base}f_auto,q_auto,w_540/v1788982280/downtown-north-bay-main-street_pw20b3.png 540w, ${base}f_auto,q_auto,w_1080/v1788982280/downtown-north-bay-main-street_pw20b3.png 1080w`}
+          sizes="(max-width: 900px) calc(100vw - 48px), 460px"
           alt="Main Street, downtown North Bay"
           width="540"
           height="540"
@@ -142,7 +147,9 @@ const localBusiness = {
   <section class="section" style="padding-top: 0">
     <div class="container institute">
       <img
-        src={`${base}f_auto,q_auto,w_800/v1788982278/appraisal-institute-of-canada-logo_phh8tr.png`}
+        src={`${base}f_auto,q_auto,w_640/v1788982278/appraisal-institute-of-canada-logo_phh8tr.png`}
+        srcset={`${base}f_auto,q_auto,w_320/v1788982278/appraisal-institute-of-canada-logo_phh8tr.png 320w, ${base}f_auto,q_auto,w_640/v1788982278/appraisal-institute-of-canada-logo_phh8tr.png 640w`}
+        sizes="320px"
         alt="Appraisal Institute of Canada"
         width="3213"
         height="558"
