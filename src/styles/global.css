@@ -289,7 +289,7 @@ address { font-style: normal; }
   .nav-list a { display: flex; justify-content: space-between; padding: 14px 0; font-size: var(--text-lg); }
   .nav-list a:hover, .nav-list a[aria-current="page"] { box-shadow: none; color: var(--color-accent); }
   .has-dropdown > a::after { display: none; }
-  .has-dropdown > a { font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); padding-bottom: 4px; pointer-events: none; }
+  .has-dropdown > a { font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); padding-bottom: 4px; }
   .dropdown { position: static; opacity: 1; visibility: visible; transform: none; min-width: 0; margin: 0; padding: 0 0 var(--space-2); background: none; border: 0; }
   .dropdown a { padding: 10px 0; color: rgba(255,255,255,0.86); font-weight: var(--weight-semibold); font-size: var(--text-lg); }
   .dropdown a:hover { background: none; color: var(--color-accent); }
