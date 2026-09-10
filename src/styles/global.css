@@ -124,6 +124,7 @@ address { font-style: normal; }
 .has-dropdown:hover .dropdown, .has-dropdown:focus-within .dropdown { opacity: 1; visibility: visible; transform: none; }
 .dropdown a { display: block; padding: 10px var(--space-4); color: var(--color-ink); font-weight: var(--weight-regular); font-size: var(--text-base); }
 .dropdown a:hover { background: var(--color-neutral); color: var(--color-primary-dark); box-shadow: none; }
+.dropdown a[aria-current="page"] { color: var(--color-primary-dark); font-weight: var(--weight-semibold); background: var(--color-neutral); box-shadow: inset 3px 0 0 var(--color-accent); }
 .nav-actions { display: flex; align-items: center; gap: var(--space-5); }
 .nav-actions .phone { color: var(--color-white); font-weight: var(--weight-semibold); font-size: var(--text-base); }
 .nav-actions .phone:hover { color: var(--color-accent); text-decoration: none; }
@@ -292,6 +293,7 @@ address { font-style: normal; }
   .dropdown { position: static; opacity: 1; visibility: visible; transform: none; min-width: 0; margin: 0; padding: 0 0 var(--space-2); background: none; border: 0; }
   .dropdown a { padding: 10px 0; color: rgba(255,255,255,0.86); font-weight: var(--weight-semibold); font-size: var(--text-lg); }
   .dropdown a:hover { background: none; color: var(--color-accent); }
+  .dropdown a[aria-current="page"] { background: none; color: var(--color-accent); box-shadow: none; }
   .nav-actions { flex-direction: column; align-items: stretch; gap: var(--space-4); padding: var(--space-5) var(--gutter) var(--space-6); }
   .nav-actions .phone { font-size: var(--text-xl); text-align: center; }
 }
