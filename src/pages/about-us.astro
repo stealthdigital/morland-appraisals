@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import CtaBand from '../components/CtaBand.astro';
+import { aboutPage } from '../lib/schema';
 
 const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
 const headshot = (v: string, file: string) =>
@@ -45,6 +46,8 @@ const team = [
     cell: { label: '705-477-5303', href: 'tel:+17054775303' },
   },
 ];
+
+const schema = aboutPage(team);
 ---
 
 <BaseLayout
@@ -52,6 +55,8 @@ const team = [
   description="Meet the team at Morland Real Estate Appraisals, a full service appraisal firm in North Bay since the late 1980s."
   image={`${base}v1788982283/modern-office-building_bl1clt.png`}
 >
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+
   <PageHero
     image={`${base}f_auto,q_auto,w_1920/v1788982283/modern-office-building_bl1clt.png`}
     alt="Office building"
@@ -66,6 +71,7 @@ const team = [
         <p style="margin-top: var(--space-4)">Morland Real Estate Appraisals Ltd is a full service professional appraisal company approved and licensed by the Appraisal Institute of Canada. We specialize in residential and commercial real estate appraisals in the North Bay and surrounding area.</p>
         <p>In the late 1980's, Morland's was founded with the understanding that property owners, investors, purchasers and a variety of other institutions required accurate, efficient and timely appraisal services. Backed by an in-depth understanding of real estate concepts, strategies and most importantly a desire to help local individuals and companies, Morland Real Estate Appraisals quickly became a trusted source in the north.</p>
         <p>Over many years we have made it our goal to provide the most competent, friendly service and expertise available. Our appraisals are based on extensive knowledge, technology and experience in evaluating land and buildings. As real estate and real property usually forms the most significant portion of a family's assets, simply providing appraisals sometimes isn't enough. We strive to provide a greater flexibility and understanding in assisting our clients. As such, we are proud to be a leader for residential and commercial appraisals in Northeastern Ontario.</p>
+        <p>Our work spans <a href="/residential-appraisals">residential appraisals</a>, <a href="/commercial-appraisals">commercial appraisals</a>, <a href="/hunting-fishing-lodge-appraisals">hunting and fishing lodges</a> and <a href="/ontario-golf-course-appraisals">golf courses</a> across our <a href="/service-area">Northeastern Ontario service area</a>.</p>
       </div>
       <div class="photo">
         <img

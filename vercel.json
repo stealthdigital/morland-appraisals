@@ -8,6 +8,27 @@
     { "source": "/service-area/sudbury-appraisals/", "destination": "/sudbury-property-appraisals", "permanent": true },
     { "source": "/service-area/warren-appraisals", "destination": "/warren-property-appraisals", "permanent": true },
     { "source": "/service-area/warren-appraisals/", "destination": "/warren-property-appraisals", "permanent": true },
+
+    { "source": "/sitemap_index.xml", "destination": "/sitemap-index.xml", "permanent": true },
+    { "source": "/page-sitemap.xml", "destination": "/sitemap-0.xml", "permanent": true },
+    { "source": "/main-sitemap.xsl", "destination": "/sitemap-index.xml", "permanent": true },
+
     { "source": "/:path+/", "destination": "/:path+", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "morland-appraisals.vercel.app" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    }
   ]
 }

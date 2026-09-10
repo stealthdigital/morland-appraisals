@@ -23,45 +23,13 @@ const services = [
   'Investor Focused Appraisals',
 ];
 
-const localBusiness = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Morland Real Estate Appraisals Ltd',
-  url: 'https://morlandappraisals.org',
-  telephone: '+1-705-474-3500',
-  email: 'info@morlandappraisals.org',
-  image: `${base}f_auto,q_auto,w_756/v1788982277/morland-appraisals-logo-dark_phj6wc.jpg`,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '382 Fraser Street',
-    addressLocality: 'North Bay',
-    addressRegion: 'ON',
-    postalCode: 'P1B 3W7',
-    addressCountry: 'CA',
-  },
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '09:00',
-      closes: '17:00',
-    },
-  ],
-};
-
+// The business entity itself is emitted sitewide by BaseLayout.
 ---
 
 <BaseLayout
   title="Morland Real Estate Appraisals | North Bay Property Appraisers"
   description="Trust Morland Real Estate Appraisals for accurate, fast, and reliable residential and commercial property valuations in North Bay."
 >
-  <script
-    slot="head"
-    type="application/ld+json"
-    is:inline
-    set:html={JSON.stringify(localBusiness)}
-  />
-
   <section class="hero">
     <img
       class="hero-bg"
