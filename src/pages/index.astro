@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Investor from '../components/icons/Investor.astro';
+import Matrimonial from '../components/icons/Matrimonial.astro';
+import Accurate from '../components/icons/Accurate.astro';
+import Experience from '../components/icons/Experience.astro';
+import Turnaround from '../components/icons/Turnaround.astro';
+import Local from '../components/icons/Local.astro';
+import Pricing from '../components/icons/Pricing.astro';
+import Complex from '../components/icons/Complex.astro';
+
+const base = 'https://res.cloudinary.com/dj76bnpni/image/upload/';
+
+const services = [
+  'Refinancing Appraisals',
+  'Purchase Financing',
+  'Matrimonial Disputes',
+  'Estate Planning & Capital Gains',
+  'Debt Proposals',
+  'Estimate of Value for Listing',
+  'Investor Focused Appraisals',
+];
+
+const localBusiness = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Morland Real Estate Appraisals Ltd',
+  url: 'https://morlandappraisals.org',
+  telephone: '+1-705-474-3500',
+  email: 'info@morlandappraisals.org',
+  image: `${base}f_auto,q_auto,w_756/v1788982277/morland-appraisals-logo-dark_phj6wc.jpg`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '382 Fraser Street',
+    addressLocality: 'North Bay',
+    addressRegion: 'ON',
+    postalCode: 'P1B 3W7',
+    addressCountry: 'CA',
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '17:00',
+    },
+  ],
+};
+
+const stats = [
+  { value: '2,000+', label: 'Appraisals given' },
+  { value: '2 Million', label: 'Area sold' },
+  { value: '500+', label: 'Happy clients' },
+];
+---
+
+<BaseLayout
+  title="Morland Real Estate Appraisals | North Bay Residential & Commercial Appraisals"
+  description="Trust Morland Real Estate Appraisals for accurate, fast, and reliable residential and commercial property valuations in North Bay."
+>
+  <script
+    slot="head"
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(localBusiness)}
+  />
+
+  <section class="hero">
+    <img
+      class="hero-bg"
+      src={`${base}f_auto,q_auto,w_1920/v1788982278/lakefront-cottage-deck-alt_llkcny.jpg`}
+      alt="Lakefront cottage deck in the North Bay area"
+      fetchpriority="high"
+    />
+    <div class="container">
+      <div class="hero-copy">
+        <h1>North Bay and Area's Trusted Source for Residential and Commercial Appraisals</h1>
+        <p class="lede">Experienced appraisers at your service. We're here for you.</p>
+        <div class="btn-group">
+          <a class="btn btn-primary" href="/contact-us#request">Request an appraisal</a>
+          <a class="btn btn-secondary btn-secondary--light" href="tel:+17054743500">Call (705) 474-3500</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Our services</span>
+        <h2>How we help.</h2>
+      </div>
+      <ul class="help-list">
+        {services.map((service) => <li><h3>{service}</h3></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--neutral">
+    <div class="container about-grid">
+      <div class="photo">
+        <img
+          src={`${base}f_auto,q_auto,w_1080/v1788982280/downtown-north-bay-main-street_pw20b3.png`}
+          alt="Main Street, downtown North Bay"
+          width="540"
+          height="540"
+          loading="lazy"
+        />
+      </div>
+      <div>
+        <h2>About Us</h2>
+        <p style="margin-top: var(--space-4)">Morland Real Estate Appraisals is North Bay's most relied upon firm for residential and commercial property valuations. We are proud of our long-standing record of assisting individuals, financial institutions, accountants and lawyers. We are fully committed to high quality, personal service. Every appraisal is different and we work to understand your needs, situation and strategy. We're good at troubleshooting and overcoming problems. We offer fast turnaround, fair pricing, and accurate appraisals. Our team of appraisers are local, living and working in North Bay, with years of experience appraising homes and commercial properties in the North Bay area.</p>
+        <div class="stats">
+          {stats.map((stat) => (
+            <div class="stat"><strong>{stat.value}</strong><span>{stat.label}</span></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Why Choose Us?</h2>
+      </div>
+      <ul class="reasons">
+        <li class="reason"><span class="icon"><Investor /></span><h3>Understand Investor Needs</h3></li>
+        <li class="reason"><span class="icon"><Matrimonial /></span><h3>Matrimonial Settlements</h3></li>
+        <li class="reason"><span class="icon"><Accurate /></span><h3>Accurate Appraisals</h3></li>
+        <li class="reason"><span class="icon"><Experience /></span><h3>Over 30 Years of Service</h3></li>
+        <li class="reason"><span class="icon"><Turnaround /></span><h3>Fast Turnaround Times</h3></li>
+        <li class="reason"><span class="icon"><Local /></span><h3>Local Expertise</h3></li>
+        <li class="reason"><span class="icon"><Pricing /></span><h3>Fair &amp; Transparent Pricing</h3></li>
+        <li class="reason"><span class="icon"><Complex /></span><h3>Thrive in Complex Situations</h3></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0">
+    <div class="container institute">
+      <img
+        src={`${base}f_auto,q_auto,w_800/v1788982278/appraisal-institute-of-canada-logo_phh8tr.png`}
+        alt="Appraisal Institute of Canada"
+        width="3213"
+        height="558"
+        loading="lazy"
+      />
+      <div>
+        <h2>Morland Real Estate Appraisals Ltd</h2>
+        <p>We are a full service professional appraisal company approved and licensed by the Appraisal Institute of Canada. We specialize in residential and commercial real estate appraisals in the North Bay and surrounding area.</p>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</BaseLayout>

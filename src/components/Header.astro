@@ -1,0 +1,52 @@
+---
+import { routeOf } from '../lib/site';
+
+const LOGO =
+  'https://res.cloudinary.com/dj76bnpni/image/upload/c_crop,w_378,h_72,x_4,y_4/f_auto,q_auto,w_756/v1788982277/morland-appraisals-logo-dark_phj6wc.jpg';
+
+const path = routeOf(Astro.url);
+const current = (href: string) => (href === path ? 'page' : undefined);
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/"><img src={LOGO} alt="Morland Real Estate Appraisals" width="386" height="80" /></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><span class="sr-only">Menu</span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="/" aria-current={current('/')}>Home</a></li>
+        <li class="has-dropdown">
+          <a href="/residential-appraisals" aria-haspopup="true">Our Services</a>
+          <ul class="dropdown">
+            <li><a href="/residential-appraisals" aria-current={current('/residential-appraisals')}>Residential Appraisals</a></li>
+            <li><a href="/commercial-appraisals" aria-current={current('/commercial-appraisals')}>Commercial Appraisals</a></li>
+            <li><a href="/hunting-fishing-lodge-appraisals" aria-current={current('/hunting-fishing-lodge-appraisals')}>Hunting &amp; Fishing Lodge Appraisals</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="/service-area" aria-haspopup="true">Service Area</a>
+          <ul class="dropdown">
+            <li><a href="/service-area" aria-current={current('/service-area')}>North Bay &amp; Area</a></li>
+            <li><a href="/sudbury-property-appraisals" aria-current={current('/sudbury-property-appraisals')}>Sudbury</a></li>
+          </ul>
+        </li>
+        <li><a href="/about-us" aria-current={current('/about-us')}>About Us</a></li>
+        <li><a href="/contact-us" aria-current={current('/contact-us')}>Contact Us</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="phone" href="tel:+17054743500">(705) 474-3500</a>
+        <a class="btn btn-primary" href="/contact-us#request">Request an appraisal</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  (function () {
+    var header = document.querySelector('.site-header');
+    var toggle = document.querySelector('.menu-toggle');
+    function setOpen(open) { header.classList.toggle('nav-open', open); toggle.setAttribute('aria-expanded', String(open)); }
+    toggle.addEventListener('click', function () { setOpen(!header.classList.contains('nav-open')); });
+    if (location.hash === '#menu') setOpen(true);
+  })();
+</script>

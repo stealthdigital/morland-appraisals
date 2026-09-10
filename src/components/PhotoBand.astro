@@ -1,0 +1,12 @@
+---
+interface Props {
+  image: string;
+  alt: string;
+}
+
+const { image, alt } = Astro.props;
+---
+
+<section class="photo-band">
+  <img src={image} alt={alt} loading="lazy" />
+</section>

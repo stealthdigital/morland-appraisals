@@ -1,0 +1,50 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import ContactForm from '../components/ContactForm.astro';
+import PhotoBand from '../components/PhotoBand.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  heroImage: string;
+  heroAlt: string;
+  heroTitle: string;
+  heroLede: string;
+  formHeading: string;
+  formIntro: string;
+  /** Omit to render the page without the full-width photo band (service area). */
+  bandImage?: string;
+  bandAlt?: string;
+}
+
+const {
+  title,
+  description,
+  heroImage,
+  heroAlt,
+  heroTitle,
+  heroLede,
+  formHeading,
+  formIntro,
+  bandImage,
+  bandAlt,
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <PageHero image={heroImage} alt={heroAlt} title={heroTitle} lede={heroLede} />
+
+  <section class="section">
+    <div class="container copy-form">
+      <div class="copy">
+        <div class="rule"></div>
+        <slot />
+      </div>
+
+      <ContactForm heading={formHeading} intro={formIntro} />
+    </div>
+  </section>
+
+  {bandImage && <PhotoBand image={bandImage} alt={bandAlt ?? ''} />}
+</BaseLayout>
