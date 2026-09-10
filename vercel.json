@@ -1,5 +1,4 @@
 {
-  "trailingSlash": false,
   "redirects": [
     { "source": "/home-page", "destination": "/", "permanent": true },
     { "source": "/home-page/", "destination": "/", "permanent": true },
@@ -8,6 +7,7 @@
     { "source": "/service-area/sudbury-appraisals", "destination": "/sudbury-property-appraisals", "permanent": true },
     { "source": "/service-area/sudbury-appraisals/", "destination": "/sudbury-property-appraisals", "permanent": true },
     { "source": "/service-area/warren-appraisals", "destination": "/warren-property-appraisals", "permanent": true },
-    { "source": "/service-area/warren-appraisals/", "destination": "/warren-property-appraisals", "permanent": true }
+    { "source": "/service-area/warren-appraisals/", "destination": "/warren-property-appraisals", "permanent": true },
+    { "source": "/:path+/", "destination": "/:path+", "permanent": true }
   ]
 }
