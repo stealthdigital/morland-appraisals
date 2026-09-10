@@ -48,11 +48,6 @@ const localBusiness = {
   ],
 };
 
-const stats = [
-  { value: '2,000+', label: 'Appraisals given' },
-  { value: '2 Million', label: 'Area sold' },
-  { value: '500+', label: 'Happy clients' },
-];
 ---
 
 <BaseLayout
@@ -111,11 +106,17 @@ const stats = [
       <div>
         <h2>About Us</h2>
         <p style="margin-top: var(--space-4)">Morland Real Estate Appraisals is North Bay's most relied upon firm for residential and commercial property valuations. We are proud of our long-standing record of assisting individuals, financial institutions, accountants and lawyers. We are fully committed to high quality, personal service. Every appraisal is different and we work to understand your needs, situation and strategy. We're good at troubleshooting and overcoming problems. We offer fast turnaround, fair pricing, and accurate appraisals. Our team of appraisers are local, living and working in North Bay, with years of experience appraising homes and commercial properties in the North Bay area.</p>
-        <div class="stats">
-          {stats.map((stat) => (
-            <div class="stat"><strong>{stat.value}</strong><span>{stat.label}</span></div>
-          ))}
-        </div>
+        <figure class="testimonial">
+          <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">
+            {[0, 1, 2, 3, 4].map(() => (
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17.3l-6 3.3 1.3-6.6L2.4 9.4l6.7-.8z" /></svg>
+            ))}
+          </div>
+          <blockquote>
+            <p>Great experience working with Morland Appraisals. Very professional and knowledgeable. Highly recommend!</p>
+          </blockquote>
+          <figcaption>Samantha O'Connor, Google review</figcaption>
+        </figure>
       </div>
     </div>
   </section>
