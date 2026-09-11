@@ -9,6 +9,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "prebuild": "npm run lastmod",
+    "lastmod": "node scripts/generate-lastmod.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
